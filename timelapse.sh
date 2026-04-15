@@ -34,7 +34,7 @@ echo "Found $JPG_COUNT images."
 echo ""
 
 # Resolution
-RESOLUTION=$(kdialog --combobox "Select output resolution:" "1080p" "1080p" "2K" "4K" --title "Resolution")
+RESOLUTION=$(kdialog --combobox "Select output resolution:" "1080p" "2K" "4K" --title "Resolution")
 case "$RESOLUTION" in
     "2K") SCALE="2560:1440" ;;
     "4K") SCALE="3840:2160" ;;
@@ -42,7 +42,7 @@ case "$RESOLUTION" in
 esac
 
 # Speed
-SPEED=$(kdialog --combobox "Select timelapse speed:" "10x" "2x" "5x" "10x" "20x" "30x" "50x" --title "Speed")
+SPEED=$(kdialog --combobox "Select timelapse speed:" "2x" "5x" "10x" "20x" "30x" "50x" --title "Speed")
 case "$SPEED" in
     "2x")  SETPTS="0.5" ;;
     "5x")  SETPTS="0.2" ;;
@@ -53,7 +53,7 @@ case "$SPEED" in
 esac
 
 # Framerate
-FPS=$(kdialog --combobox "Select output framerate:" "30fps" "24fps" "30fps" "60fps" --title "Framerate")
+FPS=$(kdialog --combobox "Select output framerate:" "24fps" "30fps" "60fps" --title "Framerate")
 case "$FPS" in
     "24fps") FRAMERATE="24" ;;
     "60fps") FRAMERATE="60" ;;
@@ -61,7 +61,7 @@ case "$FPS" in
 esac
 
 # Quality
-QUALITY=$(kdialog --combobox "Select output quality:" "High" "Best (slow, large file)" "High" "Medium" "Low (fast, small file)" --title "Quality")
+QUALITY=$(kdialog --combobox "Select output quality:" "Best (slow, large file)" "High" "Medium" "Low (fast, small file)" --title "Quality")
 case "$QUALITY" in
     "Best (slow, large file)") CQ="14" ;;
     "Medium")                  CQ="23" ;;
